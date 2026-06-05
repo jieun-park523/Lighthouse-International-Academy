@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighthouse International Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo-area">
+        <h1 class="logo-text">Lighthouse International Academy</h1>
+    </div>
+	 <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+	<a href="login.html" class="login-btn">Login</a>
+  </nav>
+<button id="darkBtn" class="dark-toggle" onclick="toggleDark()">
+
+  <!-- 🌙 Moon -->
+  <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+    <path fill="currentColor"
+      d="M21 12.79A9 9 0 0 1 11.21 3
+      7 7 0 1 0 21 12.79z"/>
+  </svg>
+
+  <!-- ☀️ Sun -->
+  <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+    <circle cx="12" cy="12" r="5" fill="currentColor"/>
+    <g stroke="currentColor" stroke-width="2">
+      <line x1="12" y1="1" x2="12" y2="4"/>
+      <line x1="12" y1="20" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+      <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="4" y2="12"/>
+      <line x1="20" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+      <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+    </g>
+  </svg>
+
+</button>
+</header>
+
+<!-- 🌍 LANGUAGE DROPDOWN -->
+
+<div class="language-menu">
+
+  <!-- 🌍 Earth Icon -->
+  <button class="lang-btn" onclick="toggleLangMenu()">
+
+    🌍
+
+  </button>
+
+  <!-- Dropdown -->
+  <div class="lang-dropdown" id="langDropdown">
+
+    <button onclick="setLanguage('en')">
+      🇺🇸 English
+    </button>
+
+    <button onclick="setLanguage('ko')">
+      🇰🇷 한국어
+    </button>
+
+    <button onclick="setLanguage('th')">
+      🇹🇭 ไทย
+    </button>
+
+  </div>
+
+</div>
+
+<!-- SLIDER (🔥 header 아래에 위치) -->
+<section class="slider">
+<h1 id="typing"></h1>  
+  
+
+
+  <img src="images/slide1.jpg" class="slide active">
+  <img src="images/slide2.jpg" class="slide">
+  <img src="images/slide3.jpg" class="slide">
+  <img src="images/slide4.jpg" class="slide">
+  <img src="images/slide5.jpg" class="slide">
+  <img src="images/slide6.jpg" class="slide">
+  <img src="images/slide7.jpg" class="slide">
+  <img src="images/slide8.jpg" class="slide">
+  <img src="images/slide9.jpg" class="slide">
+  <img src="images/slide10.jpg" class="slide">
+  <img src="images/slide11.jpg" class="slide">
+<button class="prev">❮</button>
+  <button class="next">❯</button>
+</section>
+
+<!-- HERO SECTION -->
+<section class="hero reveal">
+
+  <div class="hero-content">
+
+    <h2 id="hero-title">
+      Shining the Light of Knowledge
+    </h2>
+
+    <p id="hero-text">
+      Building character, excellence,
+      and global leadership.
+    </p>
+
+    <a href="about.html"
+       class="btn-hero"
+       id="hero-btn">
+
+       Learn More
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- CARDS -->
+<section class="cards-section reveal">
+
+    <div class="card">
+      <h3 id="card1-title">
+  Strong Academics
+</h3>
+
+<p id="card1-text">
+  We provide School of Tomorrow curriculum for every student.
+</p>
+    </div>
+
+    <div class="card">
+        <h3 id="card2-title">
+  Creative Programs
+</h3>
+
+<p id="card2-text">
+  Music, art, leadership, debate, and more creative classes.
+</p>
+    </div>
+
+    <div class="card">
+        <h3 id="card3-title">
+  Caring Community
+</h3>
+
+<p id="card3-text">
+  A safe, supportive environment for all students.
+</p>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 Lighthouse International Academy</p>
+</footer>
+<div id="lightbox">
+  <img id="lightbox-img">
+</div>
+
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

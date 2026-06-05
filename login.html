@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(135deg, #1b5e20, #4caf50);
+
+      font-family: Arial, sans-serif;
+    }
+
+    .login-box {
+
+      background: white;
+
+      padding: 40px;
+
+      width: 320px;
+
+      border-radius: 20px;
+
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #1b5e20;
+    }
+
+    input {
+
+      width: 100%;
+
+      padding: 12px;
+
+      margin-bottom: 15px;
+
+      border-radius: 8px;
+
+      border: 1px solid #ccc;
+
+      font-size: 16px;
+
+      box-sizing: border-box;
+    }
+
+    button {
+
+      width: 100%;
+
+      padding: 12px;
+
+      border: none;
+
+      border-radius: 8px;
+
+      background: #2e7d32;
+
+      color: white;
+
+      font-size: 16px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+
+      background: #1b5e20;
+
+    }
+
+    .signup-btn {
+
+      margin-top: 10px;
+
+      background: #555;
+    }
+
+    .signup-btn:hover {
+
+      background: #333;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+  <h1>Login</h1>
+
+<input
+  type="text"
+  id="firstname"
+  placeholder="First Name"
+>
+
+<input
+  type="text"
+  id="lastname"
+  placeholder="Last Name"
+>
+
+<input
+  type="text"
+  id="grade"
+  placeholder="Grade"
+>
+
+<select id="role">
+
+  <option value="Student">
+    Student
+  </option>
+
+  <option value="Teacher">
+    Teacher
+  </option>
+
+</select>
+
+<input
+  type="email"
+  id="email"
+  placeholder="Enter email"
+>
+
+<input
+  type="password"
+  id="password"
+  placeholder="Enter password"
+>
+
+<script type="module">
+
+import { createClient }
+from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+// 🔥 Supabase 연결
+const supabaseUrl =
+'https://czpatsellvgtpvfqduek.supabase.co'
+
+const supabaseKey =
+'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6cGF0c2VsbHZndHB2ZnFkdWVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk0MTgzNDksImV4cCI6MjA5NDk5NDM0OX0.WWVCU7c-NjYCOZ4gSvNCC4U_Zg1xBDRQQcB-_ndrajs'
+
+const supabase =
+createClient(supabaseUrl, supabaseKey)
+
+// 🔥 회원가입
+window.signUp = async function() {
+
+  const email =
+    document.getElementById("email").value
+
+  const password =
+    document.getElementById("password").value
+
+  const { error } =
+    await supabase.auth.signUp({
+
+      email: email,
+      password: password
+
+    })
+
+  if (error) {
+
+    alert(error.message)
+
+  }
+
+  else {
+
+    alert("회원가입 완료!")
+
+  }
+
+}
+
+// 🔥 로그인
+window.login = async function() {
+
+  const email =
+    document.getElementById("email").value
+
+  const password =
+    document.getElementById("password").value
+
+  const { error } =
+    await supabase.auth.signInWithPassword({
+
+      email: email,
+      password: password
+
+    })
+
+  if (error) {
+
+    alert(error.message)
+
+  }
+
+  else {
+
+    // 👑 관리자 이메일
+    if (email === "jieunpark523@gmail.com") {
+
+      window.location.href = "admin.html"
+
+    }
+
+    // 👤 일반 사용자
+    else {
+
+      window.location.href = "index.html"
+
+    }
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
