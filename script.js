@@ -431,7 +431,7 @@ window.logout = async function() {
     "login.html"
 
 }
-}
+
 // 🌍 언어 변경 함수
 
 window.setLanguage = function(lang) {
