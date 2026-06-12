@@ -74,60 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  //////////////////////////////////////
-  // 🔥 타이핑 효과
-
-  const text =
-    "Welcome to Our School!";
-
-  let typingIndex = 0;
-
-  function typeEffect() {
-
-    let typingElement =
-      document.getElementById("typing");
-
-    let slider =
-      document.querySelector(".slider");
-
-    if (!typingElement || !slider)
-      return;
-
-    if (typingIndex < text.length) {
-
-      typingElement.innerHTML +=
-        text.charAt(typingIndex);
-
-      typingIndex++;
-
-      setTimeout(typeEffect, 100);
-
-    }
-
-    else {
-
-      setTimeout(() => {
-
-        typingElement.classList.add(
-          "fade-out"
-        );
-
-        slider.classList.add(
-          "no-dark"
-        );
-
-      }, 2000);
-
-    }
-
-  }
-
-  if (document.getElementById("typing")) {
-
-    typeEffect();
-
-  }
-
+  
   //////////////////////////////////////
   // 🔥 스크롤 애니메이션
 
